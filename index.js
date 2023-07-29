@@ -15,7 +15,7 @@ const corsOptions = require('./config/corsOptions')
 const { logEvents, logger } = require('./middleware/logger')
 
 const PORT = process.env.PORT
-console.log(process.env.NODE_ENV)
+
 
 
 // middleware
