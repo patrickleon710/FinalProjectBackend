@@ -1,5 +1,5 @@
 const allowedOrigins = [
-    'http://localhost:5173'
+    'https://f-inal-project-frontend.vercel.app/'
 ]
 
 module.exports = allowedOrigins
