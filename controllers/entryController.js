@@ -5,10 +5,10 @@ const User = require("../models/User");
 // getting all entries
 
 const getEntries = async (req, res) => {
-  // const  userId = req.user._id
+  
 
   try {
-    const entries = await Entry.find(/* { user: userId } */).lean().exec();
+    const entries = await Entry.find().lean().exec();
     if (!entries?.length) {
       return res.status(400).json({ message: "No journal entries found" });
     }
@@ -45,17 +45,17 @@ const getSingleEntry = async (req, res) => {
 const createEntry = async (req, res) => {
   const { title, content } = req.body;
 
-  // const userId = req.user._id
+  
 
   console.log("work");
 
-  // console.log(req.user)
+ 
 
   if (!title || !content) {
     return res.status(400).json({ message: "Please write fill in all fields" });
   }
 
-  const entry = await Entry.create({ title, content /* user: userId */ });
+  const entry = await Entry.create({ title, content  });
 
   if (entry) {
     return res.status(200).json({ message: "New entry created" });
